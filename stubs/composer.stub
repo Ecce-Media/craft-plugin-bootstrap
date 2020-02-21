@@ -24,14 +24,7 @@
           "{{namespace}}\\": "src/"
         }
     },
-    "scripts": {
-        "dev:setup":[
-            "docker-compose run web php craft setup"
-        ],
-        "dev": [
-          "docker-compose up"
-        ]
-    },
+    "scripts": {},
     "extra": {
         "name": "{{craftName}}",
         "handle": "{{craftHandle}}",
