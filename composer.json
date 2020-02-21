@@ -23,7 +23,8 @@
   },
   "scripts": {
     "post-create-project-cmd": [
-      "@php craft/setup.php"
+      "@php craft/setup.php",
+      "docker-compose build web"
     ]
   }
 }
