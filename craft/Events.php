@@ -82,18 +82,26 @@ class Events
             ],
             'env.stub'=>[
                 'data'=>[],
-                'path'=>'.env'
-            ]
+                'path'=>['.env','.env.example']
+            ],
         ];
-        
+
         foreach($replacements as $stubFile=>$replacement){
             $contents = file_get_contents($stubDir.$stubFile);
             foreach($replacement['data'] as $key=>$value){
                 $contents = str_replace('{{'.$key.'}}',$value, $contents);
             }
-            self::makeDirectories($replacement['path'],$basePath);
-            file_put_contents($basePath.$replacement['path'],$contents);
+            if(is_string($replacement['path'])){
+                $replacement['path'] = [$replacement['path']];
+            }
+            foreach($replacement['path'] as $path){
+                self::makeDirectories($path,$basePath);
+                file_put_contents($basePath.$path,$contents);
+            }
         }
+
+        self::removeDirectory($stubDir);
+        unlink(__FILE__);
     }
 
 
@@ -115,6 +123,15 @@ class Events
                 }
             }while(count($dirs) > 0);
         }
+    }
+
+    protected static function removeDirectory($path) {
+        $files = glob($path . '/*');
+        foreach ($files as $file) {
+            is_dir($file) ? self::removeDirectory($file) : unlink($file);
+        }
+        rmdir($path);
+        return;
     }
 }
 
