@@ -94,8 +94,6 @@ class Events
             self::makeDirectories($replacement['path'],$basePath);
             file_put_contents($basePath.$replacement['path'],$contents);
         }
-
-        echo "\n\nRun: \tdocker-compose up\n\tdocker-compose exec web php craft setup\nTo Setup Craft\n\n";
     }
 
     protected static function camelCase($string, $dontStrip = []){
