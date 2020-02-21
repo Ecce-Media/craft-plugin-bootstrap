@@ -41,3 +41,17 @@ Some things to do, and ideas for potential features:
 * Release it
 
 Brought to you by [ecce](https://ecce.uk)
+
+## Developing the Plugin
+
+You will need docker and docker compose to be able to run the plugin in development mode.
+
+First create an `.env` file from the `.env.example` file then run:
+
+    docker-compose run web php craft setup
+
+once all the steps are complete you can start docker to access the craft installation:
+
+    docker-compose up
+
+Login with your details and goto settings->plugins to enable the plugin.
