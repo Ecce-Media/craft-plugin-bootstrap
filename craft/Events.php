@@ -15,7 +15,7 @@ class Events
 
         $composerName = self::snakeCase($vendorName).'/'.self::snakeCase($pluginName);
         $craftHandle =  self::snakeCase($pluginName);
-        $namespace = self::camelCase($vendorName).'\\'.self::camelCase($pluginName);
+        $namespace = ucfirst(self::camelCase($vendorName)).'\\'.ucfirst(self::camelCase($pluginName));
         $className = ucfirst(self::camelCase($pluginName));
 
         $rootPath = realpath(__DIR__.'/../');
@@ -85,7 +85,7 @@ class Events
                 'path'=>'.env'
             ]
         ];
-
+        
         foreach($replacements as $stubFile=>$replacement){
             $contents = file_get_contents($stubDir.$stubFile);
             foreach($replacement['data'] as $key=>$value){
@@ -97,10 +97,10 @@ class Events
     }
 
     protected static function camelCase($string, $dontStrip = []){
-        return lcfirst(str_replace(' ', '', ucwords(preg_replace('/^a-z0-9'.implode('',$dontStrip).']+/', ' ',$string))));
+        return lcfirst(str_replace(' ', '', ucwords(preg_replace('/[^a-z0-9'.implode('',$dontStrip).']+/', ' ',$string))));
     }
     protected static function snakeCase($string, $dontStrip = []){
-        return lcfirst(str_replace(' ', '-', strtolower(preg_replace('/^a-z0-9'.implode('',$dontStrip).']+/', ' ',$string))));
+        return lcfirst(str_replace(' ', '-', strtolower(preg_replace('/[^a-z0-9'.implode('',$dontStrip).']+/', ' ',$string))));
     }
     protected static function makeDirectories($path, $basePath){
         $path_parts = pathinfo($path);
