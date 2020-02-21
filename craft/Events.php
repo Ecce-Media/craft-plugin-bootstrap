@@ -12,7 +12,7 @@ class Events
         $pluginName = $event->getIO()->ask('Package Name (Plugin): ','Plugin');
         $description = $event->getIO()->ask('Package Description: ', '');
 
-        $composerName = self::camelCase($vendorName).'/'.self::camelCase($pluginName);
+        $composerName = self::snakeCase($vendorName).'/'.self::snakeCase($pluginName);
         $craftHandle =  self::snakeCase($pluginName);
         $namespace = self::camelCase($vendorName).'\\'.self::camelCase($pluginName);
         $className = ucfirst(self::camelCase($pluginName));
