@@ -2,7 +2,7 @@ version: '3'
 
 services:
   web:
-    image: coxeh/craft-plugin-dev:latest
+    image: coxeh/craft-plugin-dev:{{tag}}
     environment:
       - CRAFT_PLUGIN={{name}}
     ports:

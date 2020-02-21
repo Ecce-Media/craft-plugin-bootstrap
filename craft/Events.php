@@ -11,6 +11,7 @@ class Events
         $vendorName = $event->getIO()->ask('Vendor Name (ecce): ', 'ecce');
         $pluginName = $event->getIO()->ask('Package Name (Plugin): ','Plugin');
         $description = $event->getIO()->ask('Package Description: ', '');
+        $craftVersion = $event->getIO()->ask('Craft Version: ', 'latest');
 
         $composerName = self::snakeCase($vendorName).'/'.self::snakeCase($pluginName);
         $craftHandle =  self::snakeCase($pluginName);
@@ -35,6 +36,7 @@ class Events
             ],
             'docker-compose.stub'=>[
                 'data'=>[
+                    'tag'=>$craftVersion,
                     'name'=>$composerName
                 ],
                 'path'=>'docker-compose.yaml'
@@ -91,6 +93,8 @@ class Events
             self::makeDirectories($replacement['path'],$basePath);
             file_put_contents($basePath.$replacement['path'],$contents);
         }
+
+        echo "\n\nRun composer run dev:setup to setup craft\n";
     }
 
     protected static function camelCase($string, $dontStrip = []){
