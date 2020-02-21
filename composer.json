@@ -1,5 +1,5 @@
 {
-  "name": "ecce/craft-dev-plugin",
+  "name": "ecce-media/craft-plugin-bootstrap",
   "description": "Quick Setup For a Craft Plugin Utalising Docker and Docker Compose",
   "keywords": [
     "craft",
