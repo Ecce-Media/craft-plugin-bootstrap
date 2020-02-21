@@ -38,7 +38,7 @@ class Events
                 'data'=>[
                     'tag'=>$craftVersion,
                     'name'=>$composerName,
-                    'dbVolume'=>str_replace('/','',$composerName)
+                    'dbVolume'=>str_replace('/','',$composerName).'-db'
                 ],
                 'path'=>'docker-compose.yaml'
             ],
