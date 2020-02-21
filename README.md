@@ -13,4 +13,11 @@ This will install the database and allow you to login and install the plugin.
 ##Running Environment 
 To run the container run the command:
     
-    docker-compose up        
+    docker-compose up    
+    
+##Default DB Details
+
+    hostname    = db
+    username    = craft
+    password    = craft
+    db          = craft        
