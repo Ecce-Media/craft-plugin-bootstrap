@@ -9,6 +9,7 @@
   ],
   "license": "Unlicense",
   "homepage": "https://ecce.uk/",
+  "minimum-stability": "stable",
   "type": "project",
   "support": {
     "email": "support@ecce.uk"
