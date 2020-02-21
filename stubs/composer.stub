@@ -35,7 +35,7 @@
         "dev": [
           "docker-compose up"
         ]
-    }
+    },
     "extra": {
         "name": "{{craftName}}",
         "handle": "{{craftHandle}}",
