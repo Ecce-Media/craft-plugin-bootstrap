@@ -1,7 +1,8 @@
-#Craft Plugin Development Bootstrap
+# Craft Plugin Development Bootstrap
 Allows you to create a bootstrapped project specifically for craft cms plugin development
 
-##Install Environment
+## Install Environment
+
     composer create-project ecce-media/craft-plugin-bootstrap path
     
 When then installation is finished craft will need to be setup You will need to run:
@@ -10,12 +11,12 @@ When then installation is finished craft will need to be setup You will need to 
     
 This will install the database and allow you to login and install the plugin.
 
-##Running Environment 
+## Running Environment 
 To run the container run the command:
     
     docker-compose up    
     
-##Default DB Details
+## Default DB Details
 
     hostname    = db
     username    = craft
