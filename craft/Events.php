@@ -11,7 +11,7 @@ class Events
         $vendorName = $event->getIO()->ask('Vendor Name (ecce): ', 'ecce');
         $pluginName = $event->getIO()->ask('Package Name (Plugin): ','Plugin');
         $description = $event->getIO()->ask('Package Description: ', '');
-        $craftVersion = $event->getIO()->ask('Craft Version: ', 'latest');
+        $craftVersion = $event->getIO()->ask('Craft Version (latest): ', 'latest');
 
         $composerName = self::snakeCase($vendorName).'/'.self::snakeCase($pluginName);
         $craftHandle =  self::snakeCase($pluginName);
