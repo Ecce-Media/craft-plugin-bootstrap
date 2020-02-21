@@ -5,6 +5,8 @@ services:
     image: coxeh/craft-plugin-dev:{{tag}}
     environment:
       - CRAFT_PLUGIN={{name}}
+      - APACHE_RUN_USER=www-data
+      - APACHE_RUN_GROUP=www-data
     ports:
       - 8000:80
     volumes:
