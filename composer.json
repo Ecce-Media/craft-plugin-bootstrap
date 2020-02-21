@@ -31,7 +31,8 @@
   "scripts": {
     "post-create-project-cmd": [
       "Setup\\Events::postCreateProject",
-      "docker-compose run web php craft setup/security-key"
+      "docker-compose run web php craft setup/security-key",
+      "docker-compose run web php craft setup"
     ]
   }
 }

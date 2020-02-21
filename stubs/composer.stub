@@ -26,10 +26,7 @@
     },
     "scripts": {
         "dev:setup":[
-            "docker-compose up --no-start --force-recreate",
-            "docker-compose start",
-            "docker-compose exec web php craft setup",
-            "docker-compose stop"
+            "docker-compose run web php craft setup"
         ],
         "dev": [
           "docker-compose up"
