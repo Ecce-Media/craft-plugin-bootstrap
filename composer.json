@@ -29,8 +29,7 @@
   },
   "scripts": {
     "post-create-project-cmd": [
-      "Setup\\Events::postCreateProject",
-      "docker-compose build"
+      "Setup\\Events::postCreateProject"
     ]
   }
 }
