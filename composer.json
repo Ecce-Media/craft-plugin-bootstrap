@@ -1,0 +1,29 @@
+{
+  "name": "ecce/craft-dev-plugin",
+  "description": "Quick Setup For a Craft Plugin Utalising Docker and Docker Compose",
+  "keywords": [
+    "craft",
+    "cms",
+    "craftcms",
+    "project"
+  ],
+  "license": "Unlicense",
+  "homepage": "https://ecce.uk/",
+  "type": "project",
+  "support": {
+    "email": "support@ecce.uk"
+  },
+  "require": {},
+  "autoload": {},
+  "config": {
+    "optimize-autoloader": true,
+    "platform": {
+      "php": "7.0"
+    }
+  },
+  "scripts": {
+    "post-create-project-cmd": [
+      "@php craft/setup.php"
+    ]
+  }
+}

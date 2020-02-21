@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  web:
+    image: coxeh/craft-plugin-dev:latest
+    environment:
+      - CRAFT_PLUGIN={{name}}
+    ports:
+      - 8000:80
+    volumes:
+      - .:/plugin
+      - ./craft/.env:/var/www/.env
+      - ./craft/templates:/var/www/templates
+      - ./craft/web/assets:/var/www/web/assets
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+  adminer:
+    image: adminer
+    ports:
+      - 8080:8080

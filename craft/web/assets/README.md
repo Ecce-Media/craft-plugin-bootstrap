@@ -1,0 +1,1 @@
+Files will be publicly available at /assets/
