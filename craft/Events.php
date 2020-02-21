@@ -7,6 +7,7 @@ class Events
 {
     public static function postCreateProject(Event $event)
     {
+        echo "Craft Plugin Helper Setup\n";
         $vendorName = $event->getIO()->ask('Vendor Name (ecce): ', 'ecce');
         $pluginName = $event->getIO()->ask('Package Name (Plugin): ','Plugin');
         $description = $event->getIO()->ask('Package Description: ', '');
