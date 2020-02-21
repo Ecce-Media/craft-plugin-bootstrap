@@ -9,10 +9,6 @@
         "craftcms",
         "craft-plugin"
     ],
-    "support": {
-        "docs": "???",
-        "issues": "???"
-    },
     "license": "MIT",
     "authors": [
         {
