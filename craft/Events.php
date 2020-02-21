@@ -34,12 +34,6 @@ class Events
                 ],
                 'path'=>'composer.json'
             ],
-            'craft-composer.stub'=>[
-                'data'=>[
-                    'name'=>$composerName,
-                ],
-                'path'=>'craft/composer.json'
-            ],
             'docker-compose.stub'=>[
                 'data'=>[
                     'tag'=>$craftVersion,
