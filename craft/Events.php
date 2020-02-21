@@ -96,11 +96,12 @@ class Events
         }
     }
 
+
     protected static function camelCase($string, $dontStrip = []){
-        return lcfirst(str_replace(' ', '', ucwords(preg_replace('/[^a-z0-9'.implode('',$dontStrip).']+/', ' ',$string))));
+        return lcfirst(str_replace(' ', '', ucfirst(preg_replace('/[^a-z0-9\w'.implode('',$dontStrip).']*/i', ' ',$string))));
     }
     protected static function snakeCase($string, $dontStrip = []){
-        return lcfirst(str_replace(' ', '-', strtolower(preg_replace('/[^a-z0-9'.implode('',$dontStrip).']+/', ' ',$string))));
+        return lcfirst(str_replace(' ', '-', strtolower(preg_replace('/[^a-z0-9\w'.implode('',$dontStrip).']*/i', ' ',$string))));
     }
     protected static function makeDirectories($path, $basePath){
         $path_parts = pathinfo($path);
