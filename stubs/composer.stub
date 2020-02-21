@@ -25,9 +25,6 @@
         }
     },
     "scripts": {
-        "dev:setup": [
-          "docker-compose run web php craft setup"
-        ],
         "dev": [
           "docker-compose up"
         ]

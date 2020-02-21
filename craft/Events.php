@@ -34,6 +34,12 @@ class Events
                 ],
                 'path'=>'composer.json'
             ],
+            'craft-composer.stub'=>[
+                'data'=>[
+                    'name'=>$composerName,
+                ],
+                'path'=>'craft/composer.json'
+            ],
             'docker-compose.stub'=>[
                 'data'=>[
                     'tag'=>$craftVersion,
@@ -94,7 +100,7 @@ class Events
             file_put_contents($basePath.$replacement['path'],$contents);
         }
 
-        echo "\n\nRun composer run dev:setup to setup craft\n";
+        echo "\n\nRun: docker-compose run web php craft setup\nTo Setup Craft\n\n";
     }
 
     protected static function camelCase($string, $dontStrip = []){
