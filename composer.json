@@ -13,8 +13,14 @@
   "support": {
     "email": "support@ecce.uk"
   },
-  "require": {},
-  "autoload": {},
+  "require": {
+    "composer/composer": "^1.9"
+  },
+  "autoload": {
+    "psr-4": {
+      "Setup\\": "craft/"
+    }
+  },
   "config": {
     "optimize-autoloader": true,
     "platform": {
@@ -23,8 +29,7 @@
   },
   "scripts": {
     "post-create-project-cmd": [
-      "@php craft/setup.php",
-      "docker-compose build web"
+      "Setup\\Events::postCreateProject"
     ]
   }
 }
