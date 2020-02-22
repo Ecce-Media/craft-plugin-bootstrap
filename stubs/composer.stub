@@ -36,7 +36,7 @@
         }
     },
     "scripts": {
-        "test": "docker-compose run --workdir=/plugin web php vendor/bin/codecept run --steps"
+        "test": "docker run --rm -v $(pwd):/plugin -w /plugin php:7.4-cli vendor/bin/codecept run --steps"
     },
     "extra": {
         "name": "{{craftName}}",
