@@ -42,6 +42,12 @@ Some things to do, and ideas for potential features:
 
 Brought to you by [ecce](https://ecce.uk)
 
+## Testing
+
+Testing is provided by codeception to run it:
+
+    composer test
+
 ## Developing the Plugin
 
 You will need docker and docker compose to be able to run the plugin in development mode.

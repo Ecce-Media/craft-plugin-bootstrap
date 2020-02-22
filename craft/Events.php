@@ -32,7 +32,7 @@ class Events
                     'craftName'=>$pluginName,
                     'craftHandle'=>$craftHandle,
                     'className'=>$className,
-                    'version'=> ($craftVersion==='latest') ? self::$latestCraftVersion : $craftVersion
+                    'version'=> ($craftVersion==='latest') ? self::$latestCraftVersion : '^'.$craftVersion
                 ],
                 'path'=>'composer.json'
             ],
