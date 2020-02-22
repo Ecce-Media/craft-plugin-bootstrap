@@ -51,9 +51,9 @@ Testing is provided by codeception to run it:
 ## Developing the Plugin
 
 You will need docker and docker compose to be able to run the plugin in development mode.
+Run these commands to setup the development environment
 
-First create an `.env` file from the `.env.example` file then run:
-
+    cp .env.example .env
     composer install
     docker-compose run web php craft setup
 
