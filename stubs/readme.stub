@@ -54,6 +54,7 @@ You will need docker and docker compose to be able to run the plugin in developm
 
 First create an `.env` file from the `.env.example` file then run:
 
+    composer install
     docker-compose run web php craft setup
 
 once all the steps are complete you can start docker to access the craft installation:
