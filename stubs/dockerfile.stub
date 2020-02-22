@@ -1,3 +1,5 @@
 FROM ecceuk/craft-plugin-dev:{{tag}}
 COPY . /plugin
+COPY ./craft/templates /var/www/templates
+COPY ./craft/web/assets /var/www/web/assets
 RUN composer require {{name}}
