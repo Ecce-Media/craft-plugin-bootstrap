@@ -5,6 +5,7 @@ use Composer\Script\Event;
 
 class Events
 {
+    protected static $latestCraftVersion = '^3.0.0-RC1';
     public static function postCreateProject(Event $event)
     {
         echo "Craft Plugin Helper Setup\n";
@@ -30,7 +31,8 @@ class Events
                     'namespace'=>addslashes($namespace),
                     'craftName'=>$pluginName,
                     'craftHandle'=>$craftHandle,
-                    'className'=>$className
+                    'className'=>$className,
+                    'version'=> ($craftVersion==='latest') ? self::$latestCraftVersion : $craftVersion
                 ],
                 'path'=>'composer.json'
             ],
