@@ -1,0 +1,3 @@
+FROM ecceuk/craft-plugin-dev:{{tag}}
+COPY . /plugin
+RUN composer require {{name}}

@@ -36,11 +36,16 @@ class Events
             ],
             'docker-compose.stub'=>[
                 'data'=>[
-                    'tag'=>$craftVersion,
-                    'name'=>$composerName,
-                    'dbVolume'=>str_replace('/','',$composerName).'-db'
+                    'dbVolume'=>str_replace('/','-',$composerName).'-db'
                 ],
                 'path'=>'docker-compose.yaml'
+            ],
+            'dockerfile.stub'=>[
+                'data'=>[
+                    'tag'=>$craftVersion,
+                    'name'=>$composerName,
+                ],
+                'path'=>'Dockerfile'
             ],
             'plugin.stub' => [
                 'data'=>[

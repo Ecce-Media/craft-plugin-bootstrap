@@ -2,9 +2,10 @@ version: '3.7'
 
 services:
   web:
-    image: ecceuk/craft-plugin-dev:{{tag}}
+    build:
+      context: .
+      dockerfile: Dockerfile
     environment:
-      - CRAFT_PLUGIN={{name}}
       - APACHE_RUN_USER=www-data
       - APACHE_RUN_GROUP=www-data
     ports:
