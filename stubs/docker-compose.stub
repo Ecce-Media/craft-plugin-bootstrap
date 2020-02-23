@@ -13,8 +13,8 @@ services:
     volumes:
       - .:/plugin
       - .env:/var/www/.env
-      - ./craft/templates:/var/www/templates
-      - ./craft/web/assets:/var/www/web/assets
+      - ./site/templates:/var/www/templates
+      - ./site/web/assets:/var/www/web/assets
     depends_on:
       - db
   db:

@@ -1,0 +1,4 @@
+#!/usr/bin/php
+<?php
+array_shift($argv);
+passthru('docker-compose run --rm -v $(pwd):/plugin web php craft '.implode(' ',$argv));
